@@ -7,6 +7,12 @@ import (
 )
 
 func main() {
+
+	i1 := myInt(1)
+	i2 := i1.add(2)
+
+	fmt.Println(i1, i2)
+
 	inputReader := bufio.NewReader(os.Stdin)
 	fmt.Println("Please input your name:")
 
@@ -18,4 +24,11 @@ func main() {
 		fmt.Printf("Hello,%s!\n", input)
 	}
 
+}
+
+type myInt int
+
+func (i *myInt) add(another int) myInt {
+	*i = *i + myInt(another)
+	return *i
 }
