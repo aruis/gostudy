@@ -13,6 +13,10 @@ func main() {
 
 	fmt.Println(i1, i2)
 
+	testStruct()
+}
+
+func testReader() {
 	inputReader := bufio.NewReader(os.Stdin)
 	fmt.Println("Please input your name:")
 
@@ -31,4 +35,16 @@ type myInt int
 func (i *myInt) add(another int) myInt {
 	*i = *i + myInt(another)
 	return *i
+}
+
+type student struct {
+	name string
+	age  int
+}
+
+func testStruct() {
+	xiaoming := student{name: "Xiaoming", age: 2}
+	xiaoming2 := student{"Xiaoming", 2}
+	fmt.Print(xiaoming == xiaoming2)
+
 }
