@@ -14,6 +14,7 @@ func main() {
 	fmt.Println(i1, i2)
 
 	testStruct()
+	testDefer()
 }
 
 func testReader() {
@@ -47,4 +48,9 @@ func testStruct() {
 	xiaoming2 := student{"Xiaoming", 2}
 	fmt.Print(xiaoming == xiaoming2)
 
+}
+
+func testDefer() {
+	defer fmt.Println("defer something")
+	fmt.Println("print something")
 }
