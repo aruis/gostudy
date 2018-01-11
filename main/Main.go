@@ -15,6 +15,8 @@ func main() {
 
 	testStruct()
 	testDefer()
+
+	printDeferNumber()
 }
 
 func testReader() {
@@ -53,4 +55,13 @@ func testStruct() {
 func testDefer() {
 	defer fmt.Println("defer something")
 	fmt.Println("print something")
+}
+
+func printDeferNumber() {
+	for i := 0; i < 5; i++ {
+
+		defer func(n int) {
+			fmt.Printf("%d", n)
+		}(i)
+	}
 }
